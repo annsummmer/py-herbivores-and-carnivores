@@ -20,12 +20,12 @@ class Animal:
         self.health -= 50
 
     @staticmethod
-    def handle_death(self) -> None:
+    def handle_death(target: Animal) -> None:
         """Removes instance from the list."""
         Animal.alive = [
             animal
             for animal in Animal.alive
-            if animal is not self
+            if animal is not target
         ]
 
     def __repr__(self) -> str:
@@ -44,7 +44,7 @@ class Carnivore(Animal):
         target.was_bitten()
 
         if target.health <= 0:
-            target.handle_death()
+            target.handle_death(target)
 
 
 class Herbivore(Animal):
