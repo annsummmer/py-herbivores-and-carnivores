@@ -22,11 +22,7 @@ class Animal:
     @staticmethod
     def handle_death(target: Animal) -> None:
         """Removes instance from the list."""
-        Animal.alive = [
-            animal
-            for animal in Animal.alive
-            if animal is not target
-        ]
+        Animal.alive.remove(target)
 
     def __repr__(self) -> str:
         """User-friendly representation for print()."""

@@ -136,7 +136,6 @@ def test_print_animal_alive():
     output = "[{Name: King Lion, Health: 100, Hidden: False}, " \
              "{Name: Bagira, Health: 100, Hidden: False}, " \
              "{Name: Susan, Health: 100, Hidden: False}]\n"
-    print(out)
     assert out == output, (
         f"Output should equal to {output} when you print 'Animal.alive' with "
         f"three animals"
