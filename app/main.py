@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 class Animal:
     alive: list[Animal] = []
 
@@ -16,12 +19,13 @@ class Animal:
     def was_bitten(self) -> None:
         self.health -= 50
 
+    @staticmethod
     def handle_death(self) -> None:
         """Removes instance from the list."""
         Animal.alive = [
             animal
             for animal in Animal.alive
-            if self.name != animal.name
+            if animal is not self
         ]
 
     def __repr__(self) -> str:
